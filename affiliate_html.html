@@ -1,0 +1,56 @@
+<html>
+<body>
+  <form>
+    <label for="title">title:</label><br>
+    <input type="text" id="title"><br>
+    
+    <label for="manufacturer">manufacturer:</label><br>
+    <input type="text" id="manufacturer"><br>
+    
+    <label for="img_link">img_link:</label><br>
+    <input type="text" id="img_link"><br>
+    
+    <label for="amazon_link">amazon_link:</label><br>
+    <input type="text" id="amazon_link"><br>
+    
+    <label for="rakuten_link">rakuten_link:</label><br>
+    <input type="text" id="rakuten_link"><br>
+    
+    <button type="button" onclick="changeText()">Submit</button>
+  </form> 
+  <div class="kattene">
+    <div class="kattene__imgpart"><a target="_blank" rel="noopener" href="【メインのURL】"><img decoding="async" src="【画像URL】"></a></div>
+    <div class="kattene__infopart">
+      <div class="kattene__title"><a target="_blank" rel="noopener" href="【メインのURL】">【タイトル】</a></div>
+      <div class="kattene__description">【説明】</div>
+      <div class="kattene__btns __two">
+        <div><a class="kattene__btn __orange" target="_blank" rel="noopener" href="【商品のURL】">Amazon</a></div>
+        <div><a class="kattene__btn __red" target="_blank" rel="noopener" href="【商品のURL】">楽天</a></div>
+      </div>
+    </div>
+  </div>
+  <xmp id="htmlOutput"></xmp>
+  <script>
+    function changeText() {
+      var input_title = document.getElementById("title").value;
+      document.querySelector(".kattene__title a").innerHTML = input_title;
+      
+      var manufacturer = document.getElementById("manufacturer").value;
+      document.querySelector(".kattene__description").innerHTML = manufacturer;
+      
+      //var img_link = document.getElementById("img_link").value;
+      //document.querySelector(".kattene__imgpart img").setAttribute("src", img_link);
+      
+      //var amazon_link = document.getElementById("amazon_link").value;
+      //document.querySelector(".kattene__btn __orange").setAttribute("href", amazon_link);
+      //document.querySelector(".kattene__imgpart a").setAttribute("href", amazon_link);
+  
+      //var rakuten_link = document.getElementById("rakuten_link").value;
+      //document.querySelector(".kattene__btn __red").setAttribute("href", rakuten_link);
+      
+      var html = document.querySelector(".kattene").outerHTML;
+      document.getElementById("htmlOutput").innerHTML = html;
+    }
+  </script>
+</body>
+</html>
